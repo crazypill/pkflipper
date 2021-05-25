@@ -71,15 +71,15 @@ int main( int argc, const char * argv[] )
 
         ++seconds;
 
-        printf( "intent: %s, chi_squared: %3.0f, seconds remaining = %d\n", intent_higher ? "higher" : "lower", chi_squared, 60 - seconds );
+        printf( "intent: %s, chi_squared: %3.0f, seconds remaining = %d\n", intent_higher ? "higher" : "lower", chi_squared, count_period - seconds );
 //        printf( "bit_count: %d, chi_squared: %4.4f, seconds remaining = %d\n", bit_count, chi_squared, 60 - seconds );
 
         if( seconds >= count_period )
         {
-            for( int i = 1; i <= 60; i++ )
+            for( int i = 1; i <= count_period; i++ )
             {
                 sleep( 1 );
-                printf( "last score: %3.0f, last intent: %s, next session in %d secs\n", chi_squared, intent_higher ? "higher" : "lower", 60 - i );
+                printf( "last score: %3.0f, last intent: %s, next session in %d secs\n", chi_squared, intent_higher ? "higher" : "lower", count_period - i );
             }
 
             seconds = 0;
