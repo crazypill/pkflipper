@@ -84,7 +84,8 @@ int main( int argc, const char * argv[] )
 
             seconds = 0;
             chi_squared = 0;
-            intent_higher = !intent_higher;
+//            intent_higher = !intent_higher;
+            intent_higher = myrandom() & 1; // roll a random number and see if it's odd
         }
     }
     return 0;
